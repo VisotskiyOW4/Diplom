@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Документація</title>
+</head>
+
+<body>
+    <div class="top">
+        <div class="running_string">
+            <marquee behavior="scroll" direction="left">Text Text Text Text Text Text Text Text Text </marquee>
+        </div>
+        <div class="login">
+            <a>Login</a>
+        </div>
+    </div>
+    <header>
+        <div class="logo">
+            <a href="/"><img src="{% static 'img/logo.jpg' %}" id="logo"></a>
+        </div>
+        <div class="liceum_name">
+            <h1>
+                Ліцей №66 </br>Львівської міської ради
+            </h1>
+        </div>
+    </header>
+    <div class="main">
+        <div class="navigation">
+            <ul class="nav_ul">
+                {% for el in groups %}
+                    <li class="hover-underline-animation">
+                        <a href="documents/{{el.id}}">{{ el.group_name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="blocks">
+            <div class="left_menu">
+                {% for el in docs %}
+                    <a href="documents/{{el.id}}">{{ el.title }}</a></br>
+                {% endfor %}
+            </div>
+            <div class="main_info">
+                {% for el in docs %}
+                    <p>{{ el.content }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Про нас</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste nemo expedita excepturi incidunt,
+                        animi sequi
+                        architecto quisquam totam nihil dolorem minus asperiores, magnam eaque quibusdam rem natus
+                        possimus
+                        reiciendis ea?
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>Menu</h4>
+                    <ul>
+                        <li><a href="/documents">Про Ліцей</a></li>
+                        <li><a href="/documents">Учням</a></li>
+                        <li><a href="/documents">Батькам</a></li>
+                        <li><a href="/documents">Педагогам</a></li>
+                        <li><a href="/documents">Інформація</a></li>
+                        <li><a href="/documents">Виховна робота</a></li>
+                        <li><a href="/documents">Життя Ліцею</a></li>
+                        <li><a href="/documents">Спілкування</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="under_footer">
+            <p>2022 © Усі права захищені</p>
+        </div>
+    </footer>
+</body>
+
+</html>
